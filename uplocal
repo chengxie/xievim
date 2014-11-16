@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function iconvUTF8()
+{
+	FILENAME=$1
+	mv $FILENAME $FILENAME.bak
+	iconv -fGBK -tUTF8 -o$FILENAME $FILENAME.bak
+	rm $FILENAME.bak
+}
+
+svn export http://svn.chengxie.me/xievim/trunk/vim ~/.vim --force 
+svn export http://svn.chengxie.me/xievim/trunk/vimrc ~/.vimrc --force
+
+if [ "$1" = "--utf8" ]; then
+	iconvUTF8 ~/.vim/doc/xie.txt
+	iconvUTF8 ~/.vimrc
+fi
+
+
+
+
