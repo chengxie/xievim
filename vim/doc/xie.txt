@@ -1,0 +1,97 @@
+*xie.txt* Author: CHENG XIE
+Last change: February 24, 2011
+
+NERD_commenter --必须是Normal与Visual模式
+	hot key: 	\c+space	切换注释/非注释状态			
+			\cc		注释当前行
+			\cm		注释多行
+			\c$		注释当前光标到行未的内容.
+			\cy 		Same as ,cc except that the commented line(s) are yanked first.
+			\cs		以”性感”的方式注释
+			\cA		在当前行尾添加注释符，并进入Insert模式
+			\cl		Same cc, 并且左对齐.
+			\cb		Same cc, 并且两端对齐.
+			\cu		取消注释
+			\ca		在可选的注释方式之间切换，比如C/C++ 的块注释/* */和行注释//
+			Normal模式下，几乎所有命令前面都可以指定行数
+			Visual模式下执行命令，会对选中的特定区块进行注释/反注释
+	command:	:Dox	生成函数详细信息的注释模板
+
+ctags
+	hot key:	Ctrl+]	关键字跳转
+			Ctrl+\	跳转，并新开一个window区域显示
+
+cscope
+	hot key:	Ctrl+@ s	查找光标所在位置的 C 符号(可以跳过注释)
+			Ctrl+@ g	查找光标所在位置的变量或函数的定义
+			Ctrl+@ c	查找所有调用了光标所在位置的变量或函数的地方
+			Ctrl+@ t	查找光标所在位置的字符串
+			Ctrl+@ e	找光标所在位置的单词 egrep 模式
+			Ctrl+@ f	查找本文件
+			Ctrl+@ i	查找包含本文件的文件
+			Ctrl+@ d	找本函数调用的函数
+						
+echofunc
+	hot key:	Ctrl+X Ctrl+M 	显示光标处的函数原型
+			Ctrl+X Ctrl+B	关闭函数原型的显示
+			Ctrl+X Ctrl+P	前一个
+			Ctrl+X Ctrl+N	下一个
+
+自动补全相关
+	hot key:	Ctrl+X Ctrl+O	显示补全列表
+			Ctrl+_		显示补全列表
+
+MiniBufExplorer
+	hot key:	Ctrl+X Ctrl+D 	关闭当前buffer
+			Ctrl+H 		切换到前一个buffer
+			Ctrl+L		切换到后一个buffer
+	Command:	:BB 数字   	切换到指定编号的buffer
+			:BD		关闭当前buffer
+			:BP		切换到前一个buffer
+			:BN		切换到后一个buffer
+	
+QuickFix
+	hot key:	F9		打开/关闭QuickFix窗口
+			Ctrl+X Ctrl+K	查看前一个结果
+			Ctrl+X Ctrl+J	查看后一个结果
+	Command:	:cw 		打开QuickFix窗口
+			:copen		打开QuickFix窗口
+			:ccl		关闭QuickFix窗口
+			:cp 		查看前一个结果
+			:cn 		查看下一个结果
+
+Grep
+	hot key:	F3
+	Command:	:Rgrep
+	
+代码折叠
+	hot key:	F4	打开/关闭当前折叠
+	Command:	:za	打开/关闭当前折叠
+			:zA	循环地打开/关闭当前折叠
+			:zo	打开当前折叠
+			:zc	关闭当前折叠
+			:zM	关闭所有折叠
+			:zR	打开所有折叠
+						
+Taglist
+	hot key:	F2	打开或关闭Taglist窗口
+			space	在Taglist窗口内按空格键，显示函数原型
+			s	在Taglist窗口内按s键，对内容进行排序
+	
+a.vim
+	hot key:	Ctrl+A 		在新Buffer中切换到cpp\h文件
+			Ctrl+A Ctrl+S	横向分割窗口并打开cpp\h文件	
+			Ctrl+A Ctrl+V	纵向分割窗口并打开cpp\h文件	
+	Command:	:A		在新Buffer中切换到cpp\h文件
+			:AS		横向分割窗口并打开cpp\h文件
+			:AV		纵向分割窗口并打开cpp\h文件
+			:AT		新建一个tab标签页并打开cpp\h文件
+				
+Project
+	Hot key:	F12	打开或关闭project窗口
+	Command:	:PC	刷新ctags与cscope
+			:PE	进入可编辑的模式
+			:PW 	离开可编辑模式并写入文件
+
+				
+F8:		全文查找，将windows的换行符，换成unix的	

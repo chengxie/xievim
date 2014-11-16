@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILENAME=$1
+SRC_PATH_0='/mingw/lib/gcc/mingw32/4.6.1/include'
+SRC_PATH_1='/mingw/include'
+SRC_PATH_2='/mingw/usr/include'
+SRC_PATH_3='/mingw/usr/local/include'
+
+cp -p -rf /usr/include $SRC_PATH_2
+cp -p -rf /usr/local/include $SRC_PATH_3
+
+find $SRC_PATH_0 $SRC_PATH_1 $SRC_PATH_2 $SRC_PATH_3 -name '*.h' -o -name '*.hpp' > $FILENAME.files
+ctags -R -h ".h.hpp" --c++-kinds=+p --fields=+ialS --extra=+q -L $FILENAME.files -o $FILENAME.tags
+cscope -b -i $FILENAME.files -f $FILENAME.csout
+
